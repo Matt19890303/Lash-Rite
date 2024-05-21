@@ -1,6 +1,4 @@
-Thanks for downloading this template!
+# Live demo
+[site name](https://raw.githack.com/Matt19890303/Lash-Rite/main/index.html)
 
-Template Name: Gp
-Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+
