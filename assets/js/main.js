@@ -92,6 +92,28 @@
     onscroll(document, headerScrolled)
   }
 
+  // Have logo transition from one image to another
+  window.addEventListener('scroll', function() {
+    // const scrollPosition = window.scrollY;
+    const logoInitial = document.getElementById('logo-initial');
+    const logoScrolled = document.getElementById('logo-scrolled');
+    // const headerBG = document.getElementById('header');
+
+  
+    // Change the logo when the user scrolls past a certain point
+    // Adjust the value 100 to your desired scroll position
+    if (window.scrollY > 100) {
+      logoInitial.style.opacity = '0';
+      // logoScrolled.style.opacity = '1';
+      // headerBG.style.background = "rgba(255, 255, 255, 0.8);";
+    } else {
+      logoInitial.style.opacity = '1';
+      // logoScrolled.style.opacity = '0';
+      // headerBG.style.background = "pink";
+    }
+  });
+  
+
   /**
    * Back to top button
    */
@@ -308,6 +330,8 @@
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
+  window.addEventListener('load', function() {
+    new PureCounter();
+  });
 
 })()
