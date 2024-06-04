@@ -350,5 +350,20 @@ headerLinks.forEach((headerLink) => {
     const targetCollapse = document.querySelector(targetId);
     const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse);
     bsCollapse.toggle();
+
+    // Remove the active class from all links
+    headerLinks.forEach((otherLink) => {
+      otherLink.classList.remove('active');
+    });
+
+    // Add the active class to the clicked link
+    event.currentTarget.classList.add('active');
+
+     // Modify styles for .departments .nav-link.active
+    const activeDepartmentLink = document.querySelector('.departments .nav-link');
+    if (activeDepartmentLink) {
+      activeDepartmentLink.classList.add('.departments .nav-link.active');
+  }
+
   });
 });
