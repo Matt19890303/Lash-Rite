@@ -94,22 +94,16 @@
 
   // Have logo transition from one image to another
   window.addEventListener('scroll', function() {
-    // const scrollPosition = window.scrollY;
     const logoInitial = document.getElementById('logo-initial');
     const logoScrolled = document.getElementById('logo-scrolled');
-    // const headerBG = document.getElementById('header');
 
   
     // Change the logo when the user scrolls past a certain point
     // Adjust the value 100 to your desired scroll position
     if (window.scrollY > 100) {
       logoInitial.style.opacity = '0';
-      // logoScrolled.style.opacity = '1';
-      // headerBG.style.background = "rgba(255, 255, 255, 0.8);";
     } else {
       logoInitial.style.opacity = '1';
-      // logoScrolled.style.opacity = '0';
-      // headerBG.style.background = "pink";
     }
   });
   
@@ -150,7 +144,7 @@
   }, true)
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
@@ -335,3 +329,26 @@
   });
 
 })()
+
+
+
+// Terms and Conditions Page
+// Initialize Bootstrap collapse functionality
+const collapseElements = document.querySelectorAll('.collapse');
+collapseElements.forEach((collapseElement) => {
+  const bsCollapse = new bootstrap.Collapse(collapseElement, {
+    toggle: false, // Don't allow toggling via click
+  });
+});
+
+// Add click event listeners to header links
+const headerLinks = document.querySelectorAll('#departments-headings .nav-link');
+headerLinks.forEach((headerLink) => {
+  headerLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    const targetId = event.currentTarget.getAttribute('href');
+    const targetCollapse = document.querySelector(targetId);
+    const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse);
+    bsCollapse.toggle();
+  });
+});
