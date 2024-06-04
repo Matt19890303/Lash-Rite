@@ -1241,7 +1241,8 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #151515;
+  /* color: #151515; */
+  color: white;
   background: #f1592a;
 }
 
